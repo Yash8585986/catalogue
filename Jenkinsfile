@@ -9,7 +9,7 @@ pipeline {
     }
     environment {
         appVersion = ''   
-        appName = 'catalogue'      
+             
     }
 
     stages {
@@ -32,14 +32,15 @@ pipeline {
             steps {
                 sh """
                 echo "Installing dependencies for ${appName}"
-
                 npm install
+
                 """
             }
         }
         stage ('Build docker image') {
             steps {
                 sh """
+                 
                 docker build -t ${appName}:${appVersion} .
 
                 """
