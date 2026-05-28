@@ -22,7 +22,7 @@ pipeline {
                     // Access individual properties
                     
                     def appVersion = packageJson.version                    
-                    echo "Building ${appName} - Version: ${appVersion}"
+                    echo "Building Version: ${appVersion}"
                     
                     
                 }
@@ -31,7 +31,7 @@ pipeline {
         stage ('Install dependencies') {
             steps {
                 sh """
-                echo "Installing dependencies for ${appName}"
+                echo "Installing dependencies "
                 npm install
 
                 """
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 sh """
                  
-                docker build -t ${appName}:${appVersion} .
+                docker build -t catalogue:${appVersion} .
 
                 """
             }
