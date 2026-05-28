@@ -21,7 +21,7 @@ pipeline {
                     
                     // Access individual properties
                     
-                    def appVersion = packageJson.version                    
+                    appVersion = packageJson.version                    
                     echo "Building Version: ${appVersion}"
                     
                     
