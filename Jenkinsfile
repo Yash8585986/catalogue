@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'Roboshop'
+            label 'roboshop'
         }
     }
     options {
@@ -31,7 +31,6 @@ pipeline {
         stage ('Install dependencies') {
             steps {
                 sh """
-                echo "Installing dependencies "
                 npm install
 
                 """
@@ -42,7 +41,6 @@ pipeline {
                 sh """
                  
                 docker build -t catalogue:${appVersion} .
-
                 """
             }
         }
