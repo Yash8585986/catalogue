@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'Robohshop'
+            label 'Roboshop'
         }
     }
     options {
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 sh """
                 docker build -t ${appName}:${appVersion} .
-                
+
                 """
             }
         }
